@@ -22,11 +22,16 @@ describe("list", function()
         })
         local list_config = Config.get_config(config, "foo")
 
-        local list = List.decode(list_config, "foo", { "foo:bar", "baz:qux" })
+        local list = List.decode(list_config, "foo", {
+            "foo:bar",
+            nil,
+            [3] = "baz:qux",
+        })
         local displayed = list:display()
 
         eq(displayed, {
             "foo---bar",
+            "",
             "baz---qux",
         })
     end)
