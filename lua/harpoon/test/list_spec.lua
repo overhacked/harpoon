@@ -193,6 +193,16 @@ describe("list", function()
         }, list.items)
     end)
 
+    it("remove #653 bug", function()
+        local config = Config.merge_config()
+        local c = Config.get_config(config, "foo")
+        local list = List:new(c, "foo", {
+            { value = "one" },
+        })
+        list:remove_at(1)
+        eq(0, list:length())
+    end)
+
     it("remove_at", function()
         local config = Config.merge_config()
         local c = Config.get_config(config, "foo")

@@ -14,10 +14,7 @@ local function guess_length(arr)
 end
 
 local function determine_length(arr, previous_length)
-    local idx = previous_length
-    if idx == 1 and arr[idx] == nil then
-        return 0
-    end 
+    local idx = 0
     for i = previous_length, 1, -1 do
         if arr[i] ~= nil then
             idx = i
