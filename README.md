@@ -263,7 +263,7 @@ Highlight current file in the harpoon buffer list
 
 ```lua
 local harpoon_extensions = require("harpoon.extensions")
-harpoon:extend(harpoon_extensions.highlight_current_file())
+harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
 ```
 
 ### Highlight Groups
